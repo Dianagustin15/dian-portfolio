@@ -11,8 +11,9 @@
 
     <header>
         <nav>
-            <h2>Dian</h2>
+            <h2 id="nav-name">Dian</h2>
             <img src="foto.jpg" alt="My profile picture">
+            <button id="menu-btn">Menu</button>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -29,7 +30,7 @@
             <div class="hero-content">
                 <div>
                     <p>Hello, I'm</p>
-                    <h1>Dian</h1>
+                    <h1>DIAN</h1>
                     <h2>Aspiring Web Developer</h2>
 
                     <p>
@@ -37,7 +38,7 @@
                         My goal is to build useful things with technology.
                     </p>
 
-                    <a href="#projects">View My Projects</a>
+                    <a href="#projects" id="projects-btn">View My Projects</a>
                 </div>
 
                 <div class="hero-image">
@@ -80,27 +81,13 @@
         <section id="skills">
             <h2>My Skills</h2>
 
-            <div class="skills-grid">
-                <article class="skill-card">
-                    <h3>HTML</h3>
-                    <p>Building semantic and accessible web structure.</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>CSS</h3>
-                    <p>Creating responsive and user-friendly layouts.</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>JavaScript</h3>
-                    <p>Learning programming logic and web interactivity.</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Git & GitHub</h3>
-                    <p>Tracking changes and managing my code.</p>
-                </article>
+            <div class="skills-filter">
+                <button type="button" id="all-btn">All</button>
+                <button type="button" id="intermediate-btn">Intermediate+</button>
+                <button type="button" id="beginner-btn">Beginner</button>
             </div>
+
+            <div class="skills-grid" id="skills-container"></div>
         </section>
 
         <section id="projects">
@@ -152,13 +139,30 @@
                 and opportunities.
             </p>
 
+            <form id="contact-form">
+
+                <label for="name">Name</label>
+                <input type="text" id="name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email">
+
+                <label for="message">Message</label>
+                <textarea id="message"></textarea>
+
+                <button type="submit">Send Message</button>
+
+                <p id="form-message"></p>
+
+            </form>
+
             <div class="contact-links">
 
                 <a href="mailto:Masdian1510@gmail.com">
                     Email
                 </a>
 
-                <a href="#">
+                <a href="#" id="github-link">
                     GitHub
                 </a>
 
@@ -174,7 +178,8 @@
     <footer>
         <p>© 2026 Dian. All rights reserved.</p>
     </footer>
-
+    
+<script src="script.js"></script>
 </body>
 </html>
 
