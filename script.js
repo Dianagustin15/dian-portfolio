@@ -1,21 +1,13 @@
+// ==============================
+// Navigation
+// ==============================
+
 const navName = document.querySelector("#nav-name");
-
-navName.textContent = "Dian | Web Developer";
-
-const projectsBtn = document.querySelector("#projects-btn");
-
-projectsBtn.addEventListener("click", () => {
-    projectsBtn.textContent = "Opening Projects...";
-});
-
-const githubLink = document.querySelector("#github-link");
-
-githubLink.addEventListener("click", () => {
-    githubLink.textContent = "GitHub Coming Soon";
-});
-
 const menuBtn = document.querySelector("#menu-btn");
 const navMenu = document.querySelector("nav ul");
+const navLinks = document.querySelectorAll("nav ul a");
+
+navName.textContent = "Dian | Web Developer";
 
 menuBtn.addEventListener("click", () => {
     navMenu.classList.toggle("show");
@@ -27,8 +19,6 @@ menuBtn.addEventListener("click", () => {
     }
 });
 
-const navLinks = document.querySelectorAll("nav ul a");
-
 navLinks.forEach((link) => {
     link.addEventListener("click", () => {
         navMenu.classList.remove("show");
@@ -36,12 +26,15 @@ navLinks.forEach((link) => {
     });
 });
 
-const contactForm = document.querySelector("#contact-form");
 
+// ==============================
+// Contact Form
+// ==============================
+
+const contactForm = document.querySelector("#contact-form");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const messageInput = document.querySelector("#message");
-
 const formMessage = document.querySelector("#form-message");
 
 function isValidEmail(email) {
@@ -57,53 +50,41 @@ contactForm.addEventListener("submit", (event) => {
     const email = emailInput.value.trim();
     const message = messageInput.value.trim();
 
-    const formData = {
-    name: name,
-    email: email,
-    message: message
-    };
-
-    console.log(formData);
-
     if (name === "" || email === "" || message === "") {
         formMessage.textContent = "Please fill in all fields.";
-
-        formMessage.classList.add("error");
         formMessage.classList.remove("success");
+        formMessage.classList.add("error");
 
         return;
     }
 
     if (!isValidEmail(email)) {
         formMessage.textContent = "Please enter a valid email address.";
-
-        formMessage.classList.add("error");
         formMessage.classList.remove("success");
+        formMessage.classList.add("error");
 
         return;
     }
 
-    formMessage.textContent = "Message sent successfully!";
+    const formData = {
+        name,
+        email,
+        message
+    };
 
-    formMessage.classList.add("success");
+    console.log(formData);
+
+    formMessage.textContent = "Message sent successfully!";
     formMessage.classList.remove("error");
+    formMessage.classList.add("success");
 
     contactForm.reset();
 });
 
-function calculateTotal(price, quantity) {
-    return price * quantity;
-}
 
-let result = calculateTotal(10000, 3);
-
-console.log(result);
-
-let skillss = ["HTML", "CSS", "JavaScript"];
-
-skillss.forEach((skill) => {
-    console.log("i know " + skill);
-});
+// ==============================
+// Skills Data
+// ==============================
 
 const skills = [
     {
@@ -130,23 +111,53 @@ const skills = [
         name: "DOM",
         description: "Creating interactive web experiences.",
         level: 2
+    },
+    {
+        name: "API / Fetch",
+        description: "Working with external data.",
+        level: 1
     }
 ];
 
-function getLevelText(level) {
-    if (level === 4) {
-        return "Advanced";
-    } else if (level === 3) {
-        return "Intermediate";
-    } else {
-        return "Beginner";
-    }
-}
+
+// ==============================
+// Skills Elements
+// ==============================
 
 const skillsContainer = document.querySelector("#skills-container");
 const allBtn = document.querySelector("#all-btn");
 const intermediateBtn = document.querySelector("#intermediate-btn");
 const beginnerBtn = document.querySelector("#beginner-btn");
+
+
+// ==============================
+// Skills Helpers
+// ==============================
+
+function getLevelText(level) {
+    if (level === 4) {
+        return "Advanced";
+    }
+
+    if (level === 3) {
+        return "Intermediate";
+    }
+
+    return "Beginner";
+}
+
+function setActiveButton(activeButton) {
+    allBtn.classList.remove("active");
+    intermediateBtn.classList.remove("active");
+    beginnerBtn.classList.remove("active");
+
+    activeButton.classList.add("active");
+}
+
+
+// ==============================
+// Render Skills
+// ==============================
 
 function renderSkills(skillList) {
     skillsContainer.innerHTML = "";
@@ -172,8 +183,14 @@ function renderSkills(skillList) {
     });
 }
 
+
+// ==============================
+// Skills Filters
+// ==============================
+
 allBtn.addEventListener("click", () => {
     renderSkills(skills);
+    setActiveButton(allBtn);
 });
 
 intermediateBtn.addEventListener("click", () => {
@@ -182,6 +199,7 @@ intermediateBtn.addEventListener("click", () => {
     });
 
     renderSkills(filteredSkills);
+    setActiveButton(intermediateBtn);
 });
 
 beginnerBtn.addEventListener("click", () => {
@@ -190,4 +208,13 @@ beginnerBtn.addEventListener("click", () => {
     });
 
     renderSkills(filteredSkills);
+    setActiveButton(beginnerBtn);
 });
+
+
+// ==============================
+// Initial State
+// ==============================
+
+setActiveButton(allBtn);
+renderSkills(skills);

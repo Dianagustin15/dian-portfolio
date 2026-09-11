@@ -2,8 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <link rel="stylesheet" href="style.css">
+
     <title>Dian | Web Developer</title>
 </head>
 
@@ -12,25 +17,51 @@
     <header>
         <nav>
             <h2 id="nav-name">Dian</h2>
-            <img src="foto.jpg" alt="My profile picture">
-            <button id="menu-btn">Menu</button>
+
+            <img
+                src="foto.jpg"
+                alt="Dian's profile picture"
+            >
+
+            <button id="menu-btn" type="button">
+                Menu
+            </button>
+
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+        <!-- Home -->
         <section id="home">
             <div class="hero-content">
+
                 <div>
                     <p>Hello, I'm</p>
+
                     <h1>DIAN</h1>
+
                     <h2>Aspiring Web Developer</h2>
 
                     <p>
@@ -38,19 +69,27 @@
                         My goal is to build useful things with technology.
                     </p>
 
-                    <a href="#projects" id="projects-btn">View My Projects</a>
+                    <a href="#projects">
+                        View My Projects
+                    </a>
                 </div>
 
                 <div class="hero-image">
-                    <img src="foto.jpg" alt="Dian's profile picture">
+                    <img
+                        src="foto.jpg"
+                        alt="Dian's profile picture"
+                    >
                 </div>
+
             </div>
         </section>
 
+        <!-- About -->
         <section id="about">
             <h2>About Me</h2>
 
             <div class="about-content">
+
                 <div>
                     <p>
                         I'm Dian, a beginner web developer who is currently
@@ -75,28 +114,44 @@
                         (deep reflection).
                     </p>
                 </div>
+
             </div>
         </section>
 
+        <!-- Skills -->
         <section id="skills">
             <h2>My Skills</h2>
 
             <div class="skills-filter">
-                <button type="button" id="all-btn">All</button>
-                <button type="button" id="intermediate-btn">Intermediate+</button>
-                <button type="button" id="beginner-btn">Beginner</button>
+                <button type="button" id="all-btn">
+                    All
+                </button>
+
+                <button type="button" id="intermediate-btn">
+                    Intermediate+
+                </button>
+
+                <button type="button" id="beginner-btn">
+                    Beginner
+                </button>
             </div>
 
-            <div class="skills-grid" id="skills-container"></div>
+            <div
+                class="skills-grid"
+                id="skills-container"
+            ></div>
         </section>
 
+        <!-- Projects -->
         <section id="projects">
             <h2>My Projects</h2>
 
             <div class="projects-grid">
 
                 <article class="project-card">
-                    <span class="project-badge">NEW</span>
+                    <span class="project-badge">
+                        NEW
+                    </span>
 
                     <h3>Personal Portfolio Website</h3>
 
@@ -111,7 +166,9 @@
                         <span>Responsive Design</span>
                     </div>
 
-                    <span class="project-status">In Progress</span>
+                    <span class="project-status">
+                        In Progress
+                    </span>
                 </article>
 
                 <article class="project-card">
@@ -125,12 +182,15 @@
                         <span>JavaScript</span>
                     </div>
 
-                    <a href="#">Coming Soon</a>
+                    <a href="#">
+                        Coming Soon
+                    </a>
                 </article>
 
             </div>
         </section>
 
+        <!-- Contact -->
         <section id="contact">
             <h2>Contact Me</h2>
 
@@ -142,15 +202,26 @@
             <form id="contact-form">
 
                 <label for="name">Name</label>
-                <input type="text" id="name">
+
+                <input
+                    type="text"
+                    id="name"
+                >
 
                 <label for="email">Email</label>
-                <input type="email" id="email">
+
+                <input
+                    type="email"
+                    id="email"
+                >
 
                 <label for="message">Message</label>
+
                 <textarea id="message"></textarea>
 
-                <button type="submit">Send Message</button>
+                <button type="submit">
+                    Send Message
+                </button>
 
                 <p id="form-message"></p>
 
@@ -162,7 +233,7 @@
                     Email
                 </a>
 
-                <a href="#" id="github-link">
+                <a href="#">
                     GitHub
                 </a>
 
@@ -178,8 +249,7 @@
     <footer>
         <p>© 2026 Dian. All rights reserved.</p>
     </footer>
-    
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
